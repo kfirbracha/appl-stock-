@@ -55,14 +55,16 @@ const DefaultChart = (props:IProps) => {
         <h1>APPL</h1>
         <h2>{currentCloseRate}</h2>
       </div>
-    <div style={{display:'flex',justifyContent:'center',flexDirection:'row',marginTop:'5%',marginBottom:'3%'}}>
+    <div style={{display:'flex',justifyContent:'center',flexDirection:'row',marginTop:'1%',marginBottom:'3%'}}>
       <button style={{...styles.button ,borderBottom :currentChoice === period.FIVE_MIN?'1px solid black':0}} onClick={()=>onChangeChartPreiod(period.FIVE_MIN,'Minutes')}>5M</button>
       <button style={{...styles.button,borderBottom :currentChoice === period.ONE_MIN && precision === 'Minutes'?'1px solid black':0}} onClick={()=>onChangeChartPreiod(period.ONE_MIN,'Minutes')}>1M</button>
       <button style={{...styles.button,borderBottom :currentChoice === period.ONE_HOUR && precision === 'Hour'?'1px solid black':0}} onClick={()=>onChangeChartPreiod(period.ONE_HOUR,'Hour')}>1H</button>
       <button style={{...styles.button,borderBottom :currentChoice === period.ONE_WEEK?'1px solid black':0}} onClick={()=>onChangeChartPreiod(30,'Minutes')}
       >1W</button>
     </div>
-    <Line type='default'  style={{flex:1,}} data={chartData}/>
+    <div style={{display:'flex',textAlign:'center',justifyContent:'center'}}>
+    <Line type='default'  style={{display:'flex',flexWrap:'wrap',maxHeight:'400px'}} data={chartData}/>
+    </div>
     </div>
 
 }
